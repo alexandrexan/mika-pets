@@ -2,25 +2,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
 
-        :root {
-            --cor1: #CDB4DB;
-            --cor2: #FFC8DD;
-            --cor3: #FFAFCC;
-            --cor4: #BDE0FE;
-            --cor5: #A2D2FF;
-            
-            --fonte-google: "Hachi Maru Pop", 'Arial','cursive';
+    :root {
+    --cor1: #CDB4DB;
+    --cor2: #FFC8DD;
+    --cor3: #FFAFCC;
+    --cor4: #BDE0FE;
+    --cor5: #A2D2FF;
+                
+    --fonte-google: "Hachi Maru Pop", 'Arial','cursive';
         }
 
         * {
             margin: 0%;
-            padding: 0%;
+            box-sizing: border-box;
         }
         
         body {
             background-color: var(--cor1);
             height: 100vh;
             margin: 0px;
+            text-align: justify;
         }
 
         h1 {
@@ -60,64 +61,218 @@
         nav a:hover{
             background-color: var(--cor1);
             transition-duration: .5s;
-            padding: 14px
+            padding: 12px;
         }
 
         main {
-            margin-left: 60px;
-            padding-top: 30px
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
         }
 
-        div.caixa {
-            width: 300px;
-            height: 300px;
-            margin: 10px 30px 30px 140px;
-            padding: 40px;
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .caixa {
+            width: 400px;
+            margin: 0;
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.116);
             border-radius: 10px;
+            border-radius: 10px;
             border: 2px solid black;
-            display: inline-block;
         }
 
-        #c1 {
-            background-color: var(--cor3);
+        .img-container {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #c1 .img-container {
             background-image: url(imagens/dog1.jpg);
-            background-size: cover;
         }
 
-        #c2 {
-            background-color: var(--cor4);
+        #c2 .img-container {
             background-image: url(imagens/dog2.jpg);
-            background-size: cover;
-            background-position: center;
         }
 
-        #c3 {
-            background-color: var(--cor5);
+        #c3 .img-container {
             background-image: url(imagens/dog3.jpg);
-            background-size: cover;
-            background-position: center;
         }
 
-        p {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: normal;
-            font-size: 11px;
+        figcaption {
+            font-family: var(--fonte-google);
+            font-size: 20px;
             text-align: center;
-            color: black;
-            padding: 350px;
-            margin: -2px -300px 0px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: black;
             font-weight: bold;
+            padding: 10px;
+            background-color: var(--cor1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
+            transition: transform 0.3s ease;
+        }
+
+        figcaption:hover {
+            transform: scale(1.1);
+        }
+
+        div p {
+            font-family: var(--fonte-google);
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        div p:hover {
+            transform: scale(1.1);
         }
 
         footer p {
             font-family: var(--fonte-google);
             font-weight: bold;
-            font-size: 15px;
-            padding: 60px;
+            text-align: center;
+            font-size: 18px;
+            padding: 40px;
         }
+        footer a {
+            text-decoration: none;
+            color: black;
+        }
+        footer a:hover {
+            background-color: var(--cor2);
+            transition-duration: .5s;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        .info {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            padding: 20px;
+        }
+        /* ...código existente... */
+
+
+        /* Tornando a página responsiva */
+        
+        @media (max-width: 1024px) {
+        div.caixa {
+        width: 250px;
+        height: 250px;
+        margin: 10px auto;
+        padding: 20px;
+        }
+
+        main {
+        margin-left: 20px;
+        padding-top: 20px;
+        }
+
+        h1 {
+        font-size: 40px;
+        padding: 8px;
+        }
+
+        h2 {
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 14px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .caixa {
+        width: 250px;
+    }
+    
+    .img-container {
+        height: 250px;
+    }
+    
+    figcaption {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    div.caixa {
+        width: 200px;
+        height: 200px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    footer p {
+        font-size: 14px;
+        padding: 40px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .caixa {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .img-container {
+        height: 200px;
+    }
+    
+    figcaption {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    div.caixa {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    footer p {
+        font-size: 12px;
+        padding: 20px;
+    }
+    }
