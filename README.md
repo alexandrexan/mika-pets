@@ -1,2 +1,2 @@
-Site para praticar html, css e js
-projeto de minha autoria.
+Site para praticar html, css e js...
+Projeto de minha autoria.
