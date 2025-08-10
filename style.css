@@ -60,8 +60,7 @@
 
         nav a:hover{
             background-color: var(--cor1);
-            transition-duration: .5s;
-            padding: 12px;
+            padding: 8px 8px 15px;
         }
 
         main {
@@ -85,9 +84,9 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.116);
-            border-radius: 10px;
-            border-radius: 10px;
             border: 2px solid black;
+            position: relative; /* Necessário para posicionar o tooltip */
+            display: inline-block;
         }
 
         .img-container {
@@ -160,17 +159,48 @@
             font-size: 20px;
             padding: 20px;
         }
-        /* ...código existente... */
+        
+        .tooltip {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        .caixa:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
 
         /* Tornando a página responsiva */
         
         @media (max-width: 1024px) {
-        div.caixa {
-        width: 250px;
-        height: 250px;
-        margin: 10px auto;
-        padding: 20px;
+            .caixa {
+            width: 250px;
+            height: 250px;
+            margin: 10px auto;
+            padding: 20px;
         }
 
         main {
@@ -192,11 +222,23 @@
         padding: 10px;
         font-size: 14px;
     }
+
+    /* Estilos do tooltip para telas menores (max-width: 1024px) */
+    .tooltip {
+        width: 150px;
+        margin-left: -75px; /* Metade da largura */
     }
+}
 
     @media (max-width: 768px) {
-    .caixa {
+        .caixa {
         width: 250px;
+    }
+    .caixa {
+        width: 200px;
+        height: 200px;
+        margin: 10px auto;
+        padding: 15px;
     }
     
     .img-container {
@@ -228,16 +270,23 @@
         font-size: 12px;
     }
 
-    footer p {
-        font-size: 14px;
-        padding: 40px;
+    /* Estilos do tooltip para telas menores (max-width: 768px) */
+    .tooltip {
+        width: 120px;
+        margin-left: -60px; /* Metade da largura */
     }
-    }
+}
 
     @media (max-width: 480px) {
-    .caixa {
+        .caixa {
         width: 100%;
         max-width: 300px;
+    }
+    .caixa {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+        padding: 10px;
     }
     
     .img-container {
@@ -275,4 +324,10 @@
         font-size: 12px;
         padding: 20px;
     }
+
+    /* Estilos do tooltip para telas menores (max-width: 480px) */
+    .tooltip {
+        width: 200px;
+        margin-left: -100px; /* Metade da largura */
     }
+}
