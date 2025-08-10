@@ -69,13 +69,42 @@
         #servicos-info {
             display: none;
             position: absolute;
-            background-color: var(--cor2);
-            border: 1px solid #ccc;
-            padding: 10px;
+            background-color: var(--cor1);
+            border-radius: 10px;
+            padding: 5px;
             z-index: 10;
             width: 200px;
+            height: auto;
             text-align: left;
-}
+        }
+
+        #home-info,
+        #contato-info,
+        #saiba-mais-info {
+            display: none;
+            position: absolute;
+            background-color: var(--cor1);
+            border-radius: 10px;
+            padding: 5px;
+            z-index: 10;
+            width: 200px;
+            height: auto;
+            text-align: left;
+        }
+
+        #servicos-info p {
+            font-family: sans-serif;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        #home-info p,
+        #contato-info p,
+        #saiba-mais-info p {
+            font-family: sans-serif;
+            text-align: left;
+            font-weight: normal;
+        }
 
         main {
             display: flex;

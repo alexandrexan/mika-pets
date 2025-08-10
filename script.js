@@ -37,4 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
     caixas.forEach(caixa => {
         observer.observe(caixa);
     });
-});     
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const servicosLink = document.getElementById('servicos-link');
+    const servicosInfo = document.getElementById('servicos-info');
+    const homeLink = document.getElementById('home-link');
+    const homeInfo = document.getElementById('home-info');
+    const contatoLink = document.getElementById('contato-link');
+    const contatoInfo = document.getElementById('contato-info');
+    const saibaMaisLink = document.getElementById('saiba-mais-link');
+    const saibaMaisInfo = document.getElementById('saiba-mais-info');
+
+    function setupInfoDisplay(link, info) {
+        link.addEventListener('mouseover', function(event) {
+            info.style.display = 'block';
+            info.style.position = 'absolute';
+            info.style.top = event.target.offsetTop + event.target.offsetHeight + 'px';
+            info.style.left = event.target.offsetLeft + 'px';
+        });
+
+        link.addEventListener('mouseout', function() {
+            info.style.display = 'none';
+        });
+    }
+
+    setupInfoDisplay(servicosLink, servicosInfo);
+    setupInfoDisplay(homeLink, homeInfo);
+    setupInfoDisplay(contatoLink, contatoInfo);
+    setupInfoDisplay(saibaMaisLink, saibaMaisInfo);
+});
