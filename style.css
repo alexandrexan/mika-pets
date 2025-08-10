@@ -56,12 +56,26 @@
             padding: 15px;
             border-radius: 5px;
             font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         nav a:hover{
             background-color: var(--cor1);
             padding: 8px 8px 15px;
+            background-color: var(--cor1);
+            padding: 8px 8px 15px;
+            transform: rotate(5deg); /* Rotação ao passar o mouse */
         }
+        #servicos-info {
+            display: none;
+            position: absolute;
+            background-color: var(--cor2);
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 10;
+            width: 200px;
+            text-align: left;
+}
 
         main {
             display: flex;
@@ -87,7 +101,14 @@
             border: 2px solid black;
             position: relative; /* Necessário para posicionar o tooltip */
             display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
+        .caixa.visible {
+            opacity: 1;
+            transform: translateY(0);
+}
 
         .img-container {
             width: 100%;
@@ -163,21 +184,21 @@
         .tooltip {
             visibility: hidden;
             width: 200px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
+            background-color: var(--cor1)   ;
+            color: black;
             border-radius: 6px;
             padding: 5px;
             position: absolute;
             z-index: 1;
-            bottom: 125%;
+            text-align: left;
+            bottom: 50%;
             left: 50%;
             margin-left: -100px;
             opacity: 0;
             transition: opacity 0.3s;
+            font-family: sans-serif;
         }
-
-        .tooltip::after {
+        .tooltip::before {
             content: "";
             position: absolute;
             top: 100%;
@@ -187,16 +208,15 @@
             border-style: solid;
             border-color: #333 transparent transparent transparent;
         }
-
-        .caixa:hover .tooltip {
+        .tooltip:hover {
             visibility: visible;
             opacity: 1;
-        }
 
+        }
         /* Tornando a página responsiva */
         
         @media (max-width: 1024px) {
-            .caixa {
+            div.caixa {
             width: 250px;
             height: 250px;
             margin: 10px auto;
@@ -231,10 +251,10 @@
 }
 
     @media (max-width: 768px) {
-        .caixa {
+        div.caixa {
         width: 250px;
     }
-    .caixa {
+    div.caixa {
         width: 200px;
         height: 200px;
         margin: 10px auto;
@@ -298,7 +318,7 @@
         padding: 10px;
     }
 
-    div.caixa {
+    .caixa {
         width: 100%;
         height: auto;
         margin: 10px auto;
