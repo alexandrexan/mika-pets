@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>MIKA PETS</title>
+    
     <link rel="shortcut icon" href="imagens/dogicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -21,21 +23,27 @@
     </header>
 
     <nav>
-        <a href="#" id="home-link">Home</a>
-        <div id="home-info">
-            <p>Voltar a página inicial.</p>
+        <div class="menu-toggle">&#9776;</div>
+        <div class="nav-links">
+        <a href="#" data-tooltip="home-info">Home</a>
+        <div id="home-info" class="tooltip-box">
+            <p>Voltar à página inicial.</p>
         </div>
-        <a href="#" id="servicos-link">Serviços</a>
-        <div id="servicos-info">
+
+        <a href="#" data-tooltip="servicos-info">Serviços</a>
+        <div id="servicos-info" class="tooltip-box">
             <p>Hotel, daycare, passeios e muito mais.</p>
         </div>
-        <a href="#" id="contato-link">Contato</a>
-        <div id="contato-info">
+
+        <a href="#" data-tooltip="contato-info">Contato</a>
+        <div id="contato-info" class="tooltip-box">
             <p>Agendar um serviço ou tirar dúvidas.</p>
         </div>
-        <a href="#" id="saiba-mais-link">Saiba mais</a>
-        <div id="saiba-mais-info">
+
+        <a href="#" data-tooltip="saiba-mais-info">Saiba mais</a>
+        <div id="saiba-mais-info" class="tooltip-box">
             <p>Descubra mais sobre nossa história e nossos valores.</p>
+        </div>
         </div>
     </nav>
 
@@ -63,9 +71,8 @@
 
     <footer>
         <p class="info">Entre em contato: <a href="mailto:contato@mikapets.com">contato@mikapets.com</a> | Telefone: (11) 1234-5678</p>
-        <p>Site by <a href="https://github.com/alexandrexan" target="_blank">XAN</a>&#128054;</p>
+        <p>Site by <a href="https://github.com/alexandrexan" target="_blank">XAN</a> 🐶</p>
     </footer>
     
 </body>
-
 </html>
