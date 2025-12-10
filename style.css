@@ -7,321 +7,280 @@
     --cor3: #FFAFCC;
     --cor4: #BDE0FE;
     --cor5: #A2D2FF;
-    --fonte-google: "Hachi Maru Pop", 'Arial','cursive', sans-serif;
+    --fonte-google: "Hachi Maru Pop", 'Arial', 'cursive', sans-serif;
 }
 
-
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body { 
-    background: var(--cor1); 
-    text-align: justify; 
-    font-family: Arial, sans-serif; 
-    min-height: 100vh; 
+body {
+    background: var(--cor1);
+    text-align: justify;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 }
 
-h1 { 
-    background: var(--cor2); 
-    text-align: center; 
-    font: normal 50px var(--fonte-google); 
-    padding: 10px; 
+h1 {
+    background: var(--cor2);
+    text-align: center;
+    font-family: var(--fonte-google);
+    font-size: 28px;
+    font-weight: normal;
+    padding: 15px 10px;
+    word-wrap: break-word;
 }
 
-h2 { 
-    background: var(--cor2); 
-    text-align: center; 
-    font: normal 20px Arial, Helvetica, sans-serif; 
-    padding: 5px 0 10px 0; 
+h2 {
+    background: var(--cor2);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px 10px;
 }
 
-nav { 
-    background: var(--cor2); 
-    position: relative; 
+nav {
+    background: var(--cor2);
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-links { 
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: nowrap; 
-    gap: 15px; 
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none; 
+.menu-toggle {
+    display: block;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
-.nav-links::-webkit-scrollbar { 
-    display: none; 
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cor2);
+    gap: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-nav a { 
-    flex: 0 0 auto; 
-    text-decoration: none; 
-    color: #000; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    font-weight: bold; 
-    font-size: 16px; 
-    transition: all 0.3s ease; 
-}
-nav a:hover { 
-    background: var(--cor1); 
-    transform: scale(1.05); 
+.nav-links.show {
+    display: flex;
 }
 
-/* ===== MENU HAMBURGER ===== */
-.menu-toggle { 
-    display: none; 
-    font-size: 28px; 
-    padding: 10px 15px; 
-    cursor: pointer; }
-
-/* ===== TOOLTIP ===== */
-.tooltip-box { 
-    display: none; 
-    position: absolute; 
-    background: var(--cor1); 
-    border-radius: 10px; 
-    padding: 8px 12px; 
-    z-index: 10; 
-    width: 200px; 
-    text-align: left; 
-    top: 100%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    box-shadow: 0px 4px 12px #00000026; 
-    font-family: sans-serif; 
+nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: block;
 }
 
-.tooltip-box p { 
-    font: normal 16px Arial, Helvetica, sans-serif; 
-    margin: 0; 
-    line-height: 1.4; 
+nav a:hover {
+    background: var(--cor1);
+    border-bottom: 3px solid var(--cor3);
 }
 
-.tooltip { 
-    visibility: hidden; 
-    width: 200px; 
-    background: var(--cor1); 
-    color: #000; 
-    border-radius: 6px; 
-    padding: 5px; 
-    position: absolute; 
-    z-index: 1; 
-    text-align: left; 
-    bottom: 50%; 
-    left: 50%; 
-    margin-left: -100px; 
-    opacity: 0; 
-    transition: opacity 0.3s, transform 0.3s; 
-    font-family: sans-serif; 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
 }
 
-.tooltip::before { 
-    content: ""; 
-    position: absolute; 
-    top: 100%; 
-    left: 50%; 
-    margin-left: -5px; 
-    border-width: 5px; 
-    border-style: solid; 
-    border-color: #333 transparent transparent transparent; 
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
-.caixa:hover .tooltip { 
-    visibility: visible; 
-    opacity: 1; 
-    transform: scale(1.1); 
+.caixa {
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 3px 5px 3px #0000001e;
+    border: 2px solid #000;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* ===== MAIN / GALERIA ===== */
-main { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 30px; 
+.caixa.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.galeria { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 50px; 
+.img-container {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
 }
 
-.caixa { 
-    width: 400px; 
-    margin: 0; 
-    padding: 0; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    box-shadow: 3px 5px 3px #0000001e; 
-    border: 2px solid #000; 
-    position: relative; 
-    display: inline-block; 
-    opacity: 0; 
-    transform: translateY(20px); 
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+#c1 .img-container {
+    background-image: url(imagens/dog1.jpg);
 }
 
-.caixa.visible { 
-    opacity: 1; transform: translateY(0); 
+#c2 .img-container {
+    background-image: url(imagens/dog2.jpg);
 }
 
-.img-container { 
-    width: 100%; height: 300px; background-size: cover; background-position: center; 
+#c3 .img-container {
+    background-image: url(imagens/dog3.jpg);
 }
 
-#c1 .img-container { 
-    background-image: url(imagens/dog1.jpg); 
+figcaption {
+    font-family: var(--fonte-google);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--cor1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
 }
 
-#c2 .img-container { 
-    background-image: url(imagens/dog2.jpg); 
+footer p {
+    font-family: var(--fonte-google);
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 16px;
 }
 
-#c3 .img-container { 
-    background-image: url(imagens/dog3.jpg); 
+footer a {
+    text-decoration: none;
+    color: #000;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
 }
 
-figcaption { 
-    font: bold 20px var(--fonte-google); 
-    text-align: center; 
-    padding: 12px; 
-    background-color: var(--cor1); 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.199); 
-    transition: transform 0.3s ease; 
+footer a:hover {
+    border-bottom: 2px solid #000;
+
 }
 
-footer p { 
-    font: bold 17px var(--fonte-google); 
-    text-align: center; 
-    padding: 40px; 
+/* * Linha do contato */
+footer .info {
+    font-size: 16px;
 }
 
-footer a { 
-    text-decoration: none; 
-    color: #000; 
+/* * Linha do crédito */
+footer p:last-child {
+    font-size: 16px;
 }
 
-.info {
-    font: normal 17px sans-serif;
+/* * MODAL  */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-out;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media(max-width:1366px) { 
-    .caixa { 
-        width: 320px; 
-    } 
-}
-
-@media(max-width:1024px) { 
-    .caixa { 
-        width: 250px; 
-        height:250px; 
-    } 
-
-    h1 { 
-        font-size:40px; 
-    } 
-
-    h2 { 
-        font-size:18px; 
-    } 
-
-    nav a { 
-        font-size:14px; 
-    } 
-}
-
-@media(max-width:768px) {
-    .caixa { 
-        width: 200px; 
-        height: 200px; 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    .img-container { 
-        height: 250px; 
-    } 
-
-    figcaption { 
-        font-size: 18px; 
-    }
-
-    h1 { 
-        font-size:30px;
-    } 
-
-    h2 { 
-        font-size:16px; 
-    } 
-
-    nav a { 
-        font-size:12px; 
-        padding:8px; 
-    }
-    /* Menu hamburger */
-    .menu-toggle { 
-        display: block; 
-    }
-    .nav-links { 
-        display: none; 
-        flex-direction: column; 
-        gap: 0;
-        width: 100%; 
-    }
-
-    .nav-links.show { 
-    display: flex; 
-    }
-
-    /* Tooltips mobile fixo */
-    .tooltip-box { 
-    position: fixed; 
-    bottom:0; 
-    left:0; 
-    right:0; 
-    border-radius:0; 
-    margin:0; 
-    padding:12px; 
-    font-size:14px; 
-    text-align:center; 
-    display:none; 
-    z-index:9999;
+    to {
+        opacity: 1;
     }
 }
 
-@media(max-width:480px) { 
-    .caixa { 
-        width:100%; 
-        max-width:300px; 
-        height:auto; 
-    } 
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .img-container {
-        height:200px;
-    } 
+.modal-content {
+    background: var(--cor2);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgb(0, 0, 0);
+    max-width: 90%;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
 
-    figcaption {
-        font-size:16px;
-    } 
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
 
-    h1 {
-        font-size:24px;
-    } 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-    h2 {
-        font-size:14px;
-    } 
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #000;
+    transition: transform 0.2s ease;
+}
 
-    nav a {
-        font-size:14px;
-    } 
+.modal-close:hover {
+    transform: scale(1.2);
+}
 
-    footer p {
-        font-size:12px;
-    } 
+.modal-body {
+    text-align: center;
+}
+
+.modal-body h3 {
+    font-family: var(--fonte-google);
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.modal-body p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+.caixa {
+    cursor: pointer;
+}
+
+.caixa:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.3);
 }

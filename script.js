@@ -1,47 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-/* ===== MENU HAMBURGER ===== */
+    // ? MENU HAMBÚRGUER
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-/* ===== TOOLTIP LINKS ===== */
-    const links = document.querySelectorAll('nav a[data-tooltip]');
-    links.forEach(link => {
-    const id = link.dataset.tooltip;
-    const tooltip = document.getElementById(id);
-    
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    if(isTouchDevice){
-        link.addEventListener('click', e=>{
-        e.preventDefault();
-        document.querySelectorAll('.tooltip-box').forEach(t=>t.style.display='none');
-        tooltip.style.display = tooltip.style.display==='block'?'none':'block';
-    });
-    } else {
-        link.addEventListener('mouseenter', ()=>{ tooltip.style.display='block'; });
-        link.addEventListener('mouseleave', ()=>{ tooltip.style.display='none'; });
-    }
+    // ? Fechar menu ao clicar em um link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
     });
 
-/* ===== ANIMAÇÃO DAS CAIXAS ===== */
+    // ? ANIMAÇÃO DAS CAIXAS (Intersection Observer) =====
     const caixas = document.querySelectorAll('.caixa');
-    const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    }
-    });
-    }, {threshold:0.5});
-    caixas.forEach(c=>observer.observe(c));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
 
-/* ===== TOOLTIP DAS IMAGENS ===== */
-    caixas.forEach(caixa=>{
-    const tooltip = caixa.querySelector('.tooltip');
-    caixa.addEventListener('mouseenter',()=>{ tooltip.style.visibility='visible'; tooltip.style.opacity='1'; tooltip.style.transform='scale(1.1)'; });
-    caixa.addEventListener('mouseleave',()=>{ tooltip.style.visibility='hidden'; tooltip.style.opacity='0'; tooltip.style.transform='scale(1)'; });
+    caixas.forEach(c => observer.observe(c));
+
+    // ? MODAL DOS PETS 
+    const petCaixas = document.querySelectorAll('.caixa[data-pet]');
+    const modais = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.modal-close');
+
+    // ? Abrir modal ao clicar na caixa
+    petCaixas.forEach(caixa => {
+        caixa.addEventListener('click', () => {
+            const petName = caixa.dataset.pet;
+            const modal = document.getElementById(`modal-${petName}`);
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // ? Fechar modal ao clicar no X
+    closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const modal = e.target.closest('.modal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // ? Fechar modal ao clicar fora do conteúdo
+    modais.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
     });
 
 });

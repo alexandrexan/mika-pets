@@ -1,78 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>MIKA PETS</title>
-    
+
     <link rel="shortcut icon" href="imagens/dogicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="media-queries.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <header>
-        <h1>
-            MIKA PETS       
-        </h1>
-        
-        <h2>
-            Conforto de casa, alegria de cão.
-        </h2>
+        <h1>MIKA PETS</h1>
+        <h2>Conforto de casa, alegria de cão.</h2>
     </header>
 
     <nav>
         <div class="menu-toggle">&#9776;</div>
         <div class="nav-links">
-        <a href="#" data-tooltip="home-info">Home</a>
-        <div id="home-info" class="tooltip-box">
-            <p>Voltar à página inicial.</p>
-        </div>
-
-        <a href="#" data-tooltip="servicos-info">Serviços</a>
-        <div id="servicos-info" class="tooltip-box">
-            <p>Hotel, daycare, passeios e muito mais.</p>
-        </div>
-
-        <a href="#" data-tooltip="contato-info">Contato</a>
-        <div id="contato-info" class="tooltip-box">
-            <p>Agendar um serviço ou tirar dúvidas.</p>
-        </div>
-
-        <a href="#" data-tooltip="saiba-mais-info">Saiba mais</a>
-        <div id="saiba-mais-info" class="tooltip-box">
-            <p>Descubra mais sobre nossa história e nossos valores.</p>
-        </div>
+            <a href="#">Home</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <a href="#">Saiba mais</a>
         </div>
     </nav>
 
     <main>
         <section class="galeria">
-            <figure class="caixa" id="c1">
+            <figure class="caixa" id="c1" data-pet="dylan">
                 <div class="img-container"></div>
                 <figcaption>Dylan</figcaption>
-                <div class="tooltip">Dylan, um adorável Yorkshire de 10 anos.</div>
             </figure>
 
-            <figure class="caixa" id="c2">
+            <figure class="caixa" id="c2" data-pet="jeru">
                 <div class="img-container"></div>
                 <figcaption>Jeru</figcaption>
-                <div class="tooltip">Jeru, um enérgico Chihuahua de 1 ano.</div>
             </figure>
 
-            <figure class="caixa" id="c3">
+            <figure class="caixa" id="c3" data-pet="kobe">
                 <div class="img-container"></div>
                 <figcaption>Kobe</figcaption>
-                <div class="tooltip">Kobe, um amigável Golden Retriever de 7 anos.</div>
             </figure>
         </section>
     </main>
 
+    <!-- todo -MODAIS DE HISTÓRIAS- -->
+    <div id="modal-dylan" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h3>Dylan</h3>
+                <p>Dylan é um adorável Yorkshire Terrier de 10 anos com uma personalidade doce e carinhosa. Ele adora
+                    companhia e passa a maior parte do seu tempo ao lado de sua família. Apesar da idade, Dylan mantém
+                    sua energia e curiosidade.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-jeru" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h3>Jeru</h3>
+                <p>Jeru é um Chihuahua enérgico e cheio de vida com apenas 1 ano de idade. Apesar do tamanho pequeno,
+                    ele tem uma personalidade gigante! É brincalhão, alegre e sempre pronto para uma nova aventura. Ele
+                    adora socializar com outros cães e pessoas, trazendo alegria e energia para todos ao seu redor.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-kobe" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h3>Kobe</h3>
+                <p>Kobe é um amigável Golden Retriever de 9 anos, conhecido por sua lealdade e inteligência. Com seu
+                    temperamento gentil, ele é perfeito para famílias e adora brincar ao ar livre. Kobe é um cão muito
+                    social e sempre está pronto para receber novos amigos. Seu entusiasmo contagiante faz dele um
+                    companheiro perfeito.</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p class="info">Entre em contato: <a href="mailto:contato@mikapets.com">contato@mikapets.com</a> | Telefone: (11) 1234-5678</p>
+        <p class="info">Entre em contato: <a href="mailto:contato@mikapets.com">contato@mikapets.com.br</a> | Telefone:
+            (11) 1234-5678</p>
         <p>Site by <a href="https://github.com/alexandrexan" target="_blank">XAN</a> 🐶</p>
     </footer>
-    
+
 </body>
+
 </html>
