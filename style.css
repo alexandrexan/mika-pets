@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--cor1);
     text-align: justify;
@@ -89,7 +93,6 @@ nav a {
 
 nav a:hover {
     background: var(--cor1);
-    border-bottom: 3px solid var(--cor3);
 }
 
 main {
@@ -156,9 +159,95 @@ figcaption {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
 }
 
-footer p {
+/* ===== SEÇÃO SOBRE NÓS ===== */
+.sobre-nos {
+    background: var(--cor1);
+    padding: 40px 10px;
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-titulo {
+    background: none;
+    font-size: 32px;
     font-family: var(--fonte-google);
+    color: #000;
+    margin-bottom: 30px;
+    padding: 0;
     font-weight: bold;
+}
+
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sobre-text h3 {
+    font-family: var(--fonte-google);
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.sobre-text p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.sobre-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-item {
+    background: var(--cor2);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.card-item h4 {
+    font-family: var(--fonte-google);
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-item p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+footer p {
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 20px 10px;
     font-size: 16px;
@@ -184,6 +273,8 @@ footer .info {
 /* * Linha do crédito */
 footer p:last-child {
     font-size: 16px;
+    font-family: var(--fonte-google);
+    font-weight: bold;
 }
 
 /* * MODAL  */

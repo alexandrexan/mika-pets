@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* ===== TABLET RETRATO (481px - 768px) ===== */
+/*todo -TABLET RETRATO (481px - 768px) */
 
 @media (min-width: 481px) and (max-width: 768px) {
     h1 {
@@ -62,6 +62,39 @@
         padding: 30px 15px;
     }
 
+    .sobre-nos {
+        padding: 40px 15px;
+    }
+
+    .sobre-titulo {
+        font-size: 28px;
+    }
+
+    .sobre-text h3 {
+        font-size: 22px;
+    }
+
+    .sobre-text p {
+        font-size: 15px;
+    }
+
+    .card-item {
+        padding: 20px 15px;
+        max-width: 280px;
+    }
+
+    .card-icon {
+        font-size: 45px;
+    }
+
+    .card-item h4 {
+        font-size: 18px;
+    }
+
+    .card-item p {
+        font-size: 13px;
+    }
+
     .modal-content {
         max-width: 85%;
         padding: 40px 25px;
@@ -80,7 +113,7 @@
     }
 }
 
-/* ===== TABLET PAISAGEM (769px - 1024px) ===== */
+/*todo -TABLET PAISAGEM (769px - 1024px) */
 
 @media (min-width: 769px) and (max-width: 1024px) {
     h1 {
@@ -154,6 +187,55 @@
         padding: 40px 20px;
     }
 
+    .sobre-nos {
+        padding: 50px 20px;
+    }
+
+    .sobre-titulo {
+        font-size: 36px;
+    }
+
+    .sobre-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    .sobre-text {
+        flex: 1;
+    }
+
+    .sobre-text h3 {
+        font-size: 26px;
+    }
+
+    .sobre-text p {
+        font-size: 16px;
+    }
+
+    .sobre-cards {
+        flex: 1;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card-item {
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    .card-icon {
+        font-size: 48px;
+    }
+
+    .card-item h4 {
+        font-size: 20px;
+    }
+
+    .card-item p {
+        font-size: 15px;
+    }
+
     .modal-content {
         max-width: 75%;
         padding: 50px 30px;
@@ -172,7 +254,7 @@
     }
 }
 
-/* ===== DESKTOP / FULL HD (1025px - 1920px) ===== */
+/*todo -DESKTOP / FULL HD (1025px - 1920px)  */
 
 @media (min-width: 1025px) and (max-width: 1920px) {
     h1 {
@@ -244,6 +326,63 @@
     footer p {
         font-size: 17px;
         padding: 40px;
+    }
+
+    .sobre-nos {
+        padding: 60px 40px;
+    }
+
+    .sobre-titulo {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .sobre-content {
+        flex-direction: row;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .sobre-text {
+        flex: 1;
+    }
+
+    .sobre-text h3 {
+        font-size: 28px;
+    }
+
+    .sobre-text p {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .sobre-cards {
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .card-item {
+        flex: 1;
+        min-width: 200px;
+        padding: 30px 25px;
+    }
+
+    .card-item:hover {
+        transform: translateY(-8px);
+    }
+
+    .card-icon {
+        font-size: 55px;
+    }
+
+    .card-item h4 {
+        font-size: 22px;
+    }
+
+    .card-item p {
+        font-size: 16px;
     }
 
     .modal-content {
@@ -334,6 +473,42 @@
         padding: 50px;
     }
 
+    .sobre-nos {
+        padding: 80px 60px;
+    }
+
+    .sobre-titulo {
+        font-size: 48px;
+    }
+
+    .sobre-content {
+        gap: 80px;
+    }
+
+    .sobre-text h3 {
+        font-size: 32px;
+    }
+
+    .sobre-text p {
+        font-size: 19px;
+    }
+
+    .card-item {
+        padding: 35px 30px;
+    }
+
+    .card-icon {
+        font-size: 60px;
+    }
+
+    .card-item h4 {
+        font-size: 24px;
+    }
+
+    .card-item p {
+        font-size: 18px;
+    }
+
     .modal-content {
         max-width: 700px;
         padding: 60px 50px;
@@ -420,6 +595,42 @@
     footer p {
         font-size: 28px;
         padding: 60px;
+    }
+
+    .sobre-nos {
+        padding: 100px 80px;
+    }
+
+    .sobre-titulo {
+        font-size: 60px;
+    }
+
+    .sobre-content {
+        gap: 100px;
+    }
+
+    .sobre-text h3 {
+        font-size: 40px;
+    }
+
+    .sobre-text p {
+        font-size: 24px;
+    }
+
+    .card-item {
+        padding: 40px 35px;
+    }
+
+    .card-icon {
+        font-size: 70px;
+    }
+
+    .card-item h4 {
+        font-size: 28px;
+    }
+
+    .card-item p {
+        font-size: 22px;
     }
 
     .modal-content {
