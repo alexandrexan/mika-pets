@@ -110,6 +110,30 @@ main {
     width: 100%;
 }
 
+/* * mensagem acima da galeria */
+.galeria-info {
+    display: block;
+    text-align: center;
+    padding: 18px 14px;
+    margin: 0 auto 30px auto;
+    background: var(--cor2);
+    border-radius: 10px;
+    box-shadow: 3px 5px 3px #0000001e;
+    max-width: 900px;
+}
+
+.galeria-info p {
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.galeria-info strong {
+    font-weight: 700;
+}
+
 .caixa {
     width: 100%;
     max-width: 280px;
@@ -159,10 +183,10 @@ figcaption {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.199);
 }
 
-/* ===== SEÇÃO SOBRE NÓS ===== */
+/** SEÇÃO SOBRE NÓS  */
 .sobre-nos {
     background: var(--cor1);
-    padding: 40px 10px;
+    padding: 20px 10px 40px 10px;
 }
 
 .sobre-container {
@@ -170,20 +194,10 @@ figcaption {
     margin: 0 auto;
 }
 
-.sobre-titulo {
-    background: none;
-    font-size: 32px;
-    font-family: var(--fonte-google);
-    color: #000;
-    margin-bottom: 30px;
-    padding: 0;
-    font-weight: bold;
-}
-
 .sobre-content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .sobre-text h3 {
@@ -198,6 +212,7 @@ figcaption {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.8;
+    text-indent: 40px;
     color: #333;
     margin-bottom: 15px;
     text-align: justify;
