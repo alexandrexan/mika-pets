@@ -112,14 +112,13 @@ main {
 
 /* * mensagem acima da galeria */
 .galeria-info {
-    display: block;
-    text-align: center;
+    width: calc(100% - 30px);
+    max-width: 900px;
+    margin: 0 auto 30px;
     padding: 18px 14px;
-    margin: 0 auto 30px auto;
     background: var(--cor2);
     border-radius: 10px;
     box-shadow: 3px 5px 3px #0000001e;
-    max-width: 900px;
 }
 
 .galeria-info p {
