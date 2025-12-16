@@ -57,6 +57,20 @@
         padding: 12px;
     }
 
+    .depoimentos {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 50px 20px;
+    }
+
+    .depoimento p {
+        font-size: 16px;
+    }
+
+    .depoimento .autor {
+        font-size: 15px;
+    }
+
     footer p {
         font-size: 15px;
         padding: 30px 15px;
@@ -190,6 +204,20 @@
 
     figcaption {
         font-size: 18px;
+    }
+
+    .depoimentos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 60px 30px;
+    }
+
+    .depoimento p {
+        font-size: 17px;
+    }
+
+    .depoimento .autor {
+        font-size: 15px;
     }
 
     footer p {
@@ -340,6 +368,25 @@
     figcaption {
         font-size: 20px;
         padding: 12px;
+    }
+
+    .depoimentos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 80px 40px;
+    }
+
+    .depoimento {
+        padding: 30px;
+    }
+
+    .depoimento p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .depoimento .autor {
+        font-size: 16px;
     }
 
     footer p {
@@ -496,6 +543,24 @@
         padding: 15px;
     }
 
+    .depoimentos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        padding: 100px 60px;
+    }
+
+    .depoimento {
+        padding: 36px;
+    }
+
+    .depoimento p {
+        font-size: 20px;
+    }
+
+    .depoimento .autor {
+        font-size: 18px;
+    }
+
     footer p {
         font-size: 20px;
         padding: 50px;
@@ -618,6 +683,25 @@
     figcaption {
         font-size: 32px;
         padding: 20px;
+    }
+
+    .depoimentos {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 70px;
+        padding: 120px 80px;
+    }
+
+    .depoimento {
+        padding: 45px;
+    }
+
+    .depoimento p {
+        font-size: 24px;
+        line-height: 1.8;
+    }
+
+    .depoimento .autor {
+        font-size: 20px;
     }
 
     footer p {
