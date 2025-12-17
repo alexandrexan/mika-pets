@@ -32,6 +32,7 @@ h1 {
     text-align: center;
     font-family: var(--fonte-google);
     font-size: 28px;
+    letter-spacing: 1px;
     font-weight: normal;
     padding: 15px 10px;
     word-wrap: break-word;
@@ -302,6 +303,81 @@ figcaption {
 .depoimento .autor {
     font-size: 14px;
     font-weight: 600;
+}
+
+/* * NEWSLETTER-EMAIL */
+.news {
+    
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.news h2 {
+    background: transparent;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.font-news {
+    font-family: var(--fonte-google);
+    letter-spacing: 1px;
+}
+
+.news p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+#news-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#news-form input {
+    padding: 12px 14px;
+    font-size: 15px;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    min-width: 260px;
+}
+
+#news-form button {
+    padding: 12px 20px;
+    background: var(--cor4);
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#news-form button:hover {
+    background: var(--cor5);
+}
+
+.news-msg {
+    display: block;
+    box-sizing: border-box;
+    margin: 16px auto 0;
+    padding: 12px 16px;
+    width: calc(100% - 30px);
+    max-width: 420px;
+    background: var(--cor4);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.news-msg.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 footer p {

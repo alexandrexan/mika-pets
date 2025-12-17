@@ -99,4 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
     footer.classList.remove('highlight');
     }, 2000);
     });
+
+    // ? FORMULÁRIO DE NEWSLETTER
+    const form = document.getElementById('news-form');
+    const msg = document.querySelector('.news-msg');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+    msg.textContent = 'E-mail cadastrado com sucesso!';
+    msg.classList.add('show');
+    
+    form.reset();
+
+    setTimeout(() => {
+    msg.textContent = '';
+    msg.classList.remove('show');
+    }, 2000);
+    });
 });
