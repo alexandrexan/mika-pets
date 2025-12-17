@@ -78,6 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+        });
     });
+
+    // ? SCROLL SUAVE + DESTAQUE (CONTATO)
+    const contatoLink = document.querySelector('a[href="#contato"]');
+    const footer = document.getElementById('contato');
+
+    contatoLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    footer.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+
+    footer.classList.add('highlight');
+
+    setTimeout(() => {
+    footer.classList.remove('highlight');
+    }, 2000);
     });
 });

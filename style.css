@@ -48,7 +48,9 @@ h2 {
 
 nav {
     background: var(--cor2);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 999;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -317,9 +319,19 @@ footer a {
 }
 
 footer a:hover {
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
 
 }
+
+footer.highlight {
+    background-color: var(--cor3);
+    transition: background-color .4s ease;
+}
+
+footer .info {
+    font-weight: bold;
+}
+
 
 /* * Linha do contato */
 footer .info {
