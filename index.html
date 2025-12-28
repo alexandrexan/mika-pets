@@ -10,24 +10,28 @@
     <link rel="stylesheet" href="media-queries.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body id="topo">
 
-    <header>
-        <h1>MIKA PETS</h1>
+    <header class="site-header">
+        <h1 class="logo">
+            <a href="#topo">MIKA PETS</a>
+        </h1>
         <h2>Conforto de casa, alegria de cão.</h2>
     </header>
+    
+    <nav class="nav">
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
 
-    <nav>
-        <div class="menu-toggle">&#9776;</div>
-        <div class="nav-links">
-            <a href="#">Serviços</a>
-            <a href="#">Saiba mais</a>
-            <a href="#contato">Contato</a>
-        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="#pets">Nossos pets</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#news">Newsletter</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
     </nav>
 
     <!-- * SEÇÃO SOBRE NÓS -->
-    <section class="sobre-nos">
+    <section id="sobre" class="sobre-nos">
         <div class="sobre-container">
             <div class="sobre-content">
                 <div class="sobre-text">
@@ -69,13 +73,13 @@
         </div>
     </section>
 
-    <div class="galeria-info">
+    <div id="pets" class="galeria-info">
         <p><strong>Clique nas imagens</strong> dos nossos pets para conhecer melhor suas histórias e personalidades!
         </p>
     </div>
 
     <main>
-        <section class="galeria">
+        <section id="galeria" class="galeria">
             <figure class="caixa" id="c1" data-pet="dylan">
                 <div class="img-container"></div>
                 <figcaption>Dylan</figcaption>
@@ -131,7 +135,7 @@
         </div>
     </div>
 
-    <section class="depoimentos">
+    <section id="depoimentos" class="depoimentos">
         <h2>O que nossos clientes dizem</h2>
         <div class="depoimento">
             <p>"Meu pet voltou feliz e bem cuidado!"</p>
@@ -149,7 +153,7 @@
         </div>
     </section>
 
-    <section class="news">
+    <section id="news" class="news">
         <h2>Receba novidades da <span class="font-news">MIKA PETS</span></h2>
         <p>Dicas, cuidados e novidades direto no seu e-mail.</p>
 

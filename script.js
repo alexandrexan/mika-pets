@@ -2,13 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ? MENU HAMBÚRGUER
     const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+    const menu = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+
+    toggle.setAttribute(
+            'aria-expanded',
+            menu.classList.contains('open')
+        );
+    });
 
     // ? Fechar menu ao clicar em um link
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('show');
+        menu.classList.remove('open');
         });
     });
 
@@ -81,25 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ? SCROLL SUAVE + DESTAQUE (CONTATO)
-    const contatoLink = document.querySelector('a[href="#contato"]');
-    const footer = document.getElementById('contato');
-
-    contatoLink.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    footer.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
-
-    footer.classList.add('highlight');
-
-    setTimeout(() => {
-    footer.classList.remove('highlight');
-    }, 2000);
-    });
-
     // ? FORMULÁRIO DE NEWSLETTER
     const form = document.getElementById('news-form');
     const msg = document.querySelector('.news-msg');
@@ -116,5 +105,41 @@ document.addEventListener('DOMContentLoaded', () => {
     msg.textContent = '';
     msg.classList.remove('show');
     }, 2000);
+    });
+
+    // ? Implementa scroll spy manual.
+    // ? Sincroniza o menu com a rolagem da página.
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section, footer');
+
+    window.addEventListener('scroll', () => {
+        let pos = window.scrollY + 120;
+
+    sections.forEach(sec => {
+        if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+        links.forEach(l => l.classList.remove('active'));
+        document
+            .querySelector(`.nav-links a[href="#${sec.id}"]`)
+            ?.classList.add('active');
+        }
+        });
+    });
+
+    // ? Destaque de seção ao clicar no menu
+    const menuLinks = document.querySelectorAll('.nav-links a');
+
+    menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+    const id = link.getAttribute('href').replace('#', '');
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    section.classList.add('section-highlight');
+
+    setTimeout(() => {
+        section.classList.remove('section-highlight');
+    }, 1200);
+    }, 300);
     });
 });
