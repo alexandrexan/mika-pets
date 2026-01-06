@@ -4,23 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.nav-links');
 
-    toggle.addEventListener('click', () => {
-        menu.classList.toggle('open');
-
-    toggle.setAttribute(
-            'aria-expanded',
-            menu.classList.contains('open')
-        );
-    });
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+        });
+    }
 
     // ? Fechar menu ao clicar em um link
-    document.querySelectorAll('nav a').forEach(link => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-        menu.classList.remove('open');
+            menu.classList.remove('open');
         });
     });
 
-    // ? ANIMAÇÃO DAS CAIXAS (Intersection Observer) =====
+    // ? ANIMAÇÃO DAS CAIXAS (Intersection Observer)
     const caixas = document.querySelectorAll('.caixa');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     caixas.forEach(c => observer.observe(c));
 
-    // ? MODAL DOS PETS 
+    // ? MODAL DOS PETS
     const petCaixas = document.querySelectorAll('.caixa[data-pet]');
     const modais = document.querySelectorAll('.modal');
     const closeButtons = document.querySelectorAll('.modal-close');
@@ -72,40 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ? BOTÃO VOLTAR AO TOPO
-    const btn = document.getElementById('backToTop');
+    const btn = document.querySelector('.back-to-top');
 
-    window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        btn.classList.add('show');
-    } else {
-        btn.classList.remove('show');
-    }
-    });
-
-    btn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    if (btn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
         });
-    });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // ? FORMULÁRIO DE NEWSLETTER
     const form = document.getElementById('news-form');
     const msg = document.querySelector('.news-msg');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (form && msg) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            msg.textContent = 'E-mail cadastrado com sucesso!';
+            msg.classList.add('show');
+            form.reset();
 
-    msg.textContent = 'E-mail cadastrado com sucesso!';
-    msg.classList.add('show');
-    
-    form.reset();
-
-    setTimeout(() => {
-    msg.textContent = '';
-    msg.classList.remove('show');
-    }, 2000);
-    });
+            setTimeout(() => {
+                msg.textContent = '';
+                msg.classList.remove('show');
+            }, 2000);
+        });
+    }
 
     // ? Implementa scroll spy manual.
     // ? Sincroniza o menu com a rolagem da página.
@@ -115,13 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         let pos = window.scrollY + 120;
 
-    sections.forEach(sec => {
-        if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
-        links.forEach(l => l.classList.remove('active'));
-        document
-            .querySelector(`.nav-links a[href="#${sec.id}"]`)
-            ?.classList.add('active');
-        }
+        sections.forEach(sec => {
+            if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+                links.forEach(l => l.classList.remove('active'));
+                document
+                    .querySelector(`.nav-links a[href="#${sec.id}"]`)
+                    ?.classList.add('active');
+            }
         });
     });
 
@@ -129,17 +130,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.nav-links a');
 
     menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-    const id = link.getAttribute('href').replace('#', '');
-    const section = document.getElementById(id);
+        link.addEventListener('click', () => {
+            const id = link.getAttribute('href').replace('#', '');
+            const section = document.getElementById(id);
 
-    if (!section) return;
+            if (!section) return;
 
-    section.classList.add('section-highlight');
+            section.classList.add('section-highlight');
 
-    setTimeout(() => {
-        section.classList.remove('section-highlight');
-    }, 1200);
-    }, 300);
+            setTimeout(() => {
+                section.classList.remove('section-highlight');
+            }, 1200);
+        });
+    });
+
+    // ? Ajustar posição sticky do nav abaixo do header
+    window.addEventListener('load', () => {
+        const header = document.querySelector('.site-header');
+        const nav = document.querySelector('nav');
+        if (header && nav) {
+            const headerHeight = header.offsetHeight;
+            nav.style.top = headerHeight + 'px';
+        }
     });
 });

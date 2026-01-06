@@ -27,6 +27,12 @@ body {
     min-height: 100vh;
 }
 
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 h1 {
     background: var(--cor2);
     text-align: center;
@@ -48,6 +54,7 @@ h1 {
 .logo a {
     text-decoration: none;
     color: #000;
+    transition: all 0.3s ease !important;
 }
 
 h2 {
@@ -137,7 +144,7 @@ main {
     width: 100%;
 }
 
-/* * mensagem acima da galeria */
+/* ? mensagem acima da galeria */
 .galeria-info {
     width: calc(100% - 30px);
     max-width: 900px;
@@ -329,7 +336,7 @@ figcaption {
     font-weight: 600;
 }
 
-/* * NEWSLETTER-EMAIL */
+/* ? NEWSLETTER-EMAIL */
 .news {
     background: linear-gradient(90deg, var(--cor2), var(--cor3), var(--cor4));
     border-radius: 18px;
@@ -462,7 +469,7 @@ footer p:last-child {
     font-weight: 600;
 }
 
-#backToTop {
+.back-to-top {
     position: fixed;
     bottom: 24px;
     right: 24px;
@@ -470,28 +477,50 @@ footer p:last-child {
     height: 48px;
     border: none;
     border-radius: 50%;
-    box-shadow: 1px 2px 6px #0000004d;
+    box-shadow: 1px 2px 6px rgba(0,0,0,.3);
     background: var(--cor3);
-    color: #000000;
+    color: #000;
     font-size: 24px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .2s ease, visibility .2s ease;
+    transition: opacity .2s ease, visibility .2s ease, background .2s ease;
     z-index: 9999;
 }
 
-#backToTop:hover {
-    background: var(--cor5);
-}
-
-#backToTop.show {
+.back-to-top.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* * MODAL  */
+.back-to-top:hover {
+    background: var(--cor5);
+}
 
+/* ? Tooltip */
+.back-to-top .tooltip {
+    position: absolute;
+    bottom: 60px;
+    right: 50%;
+    transform: translateX(50%);
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.back-to-top:hover .tooltip {
+    opacity: 1;
+    transform: translateX(50%) translateY(-4px);
+}
+
+
+/* ? MODAL  */
 .modal {
     display: none;
     position: fixed;
